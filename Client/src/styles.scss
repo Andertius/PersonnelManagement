@@ -1,0 +1,35 @@
+@use '../node_modules/@angular/material/' as mat;
+
+$background-color: #303030;
+$header-footer-color: #262626;
+
+html, body { height: 100%; }
+body { 
+    height: 100%;
+    margin: 0;
+    font-family: Roboto, "Segoe UI", sans-serif !important;
+    color: white;
+    background-color: $background-color;
+    user-select: none;
+}
+
+@import "~@angular/material/theming";
+
+@include mat.core();
+
+$angular-primary: mat.define-palette(mat.$deep-purple-palette, 400, 100, 900, 100);
+$angular-accent: mat.define-palette(mat.$gray-palette, 600);
+
+$angular-warn: mat.define-palette(mat.$red-palette);
+
+$angular-default-theme: mat.define-dark-theme(
+  (
+    color: (
+      primary: $angular-primary,
+      accent: $angular-accent,
+      warn: $angular-warn,
+    ),
+  )
+);
+
+@include mat.all-component-themes($angular-default-theme);

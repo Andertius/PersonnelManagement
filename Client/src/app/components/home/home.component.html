@@ -1,0 +1,61 @@
+<div class="container">
+    <div class="another-one">
+        <div class="buttons">
+            <button mat-mini-fab color="primary" class="add" (click)="add()">
+                <mat-icon>add</mat-icon>
+            </button>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Sort by</mat-label>
+                <mat-select [(ngModel)]="selectedOption" (selectionChange)="resort()">
+                    <mat-option *ngFor="let option of sortOptions" [value]="option.value">
+                        {{option.label}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <table class="table" mat-table [dataSource]="personnel" class="mat-elevation-z8">
+            <ng-container matColumnDef="lastName">
+                <th mat-header-cell *matHeaderCellDef> Last Name </th>
+                <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="job">
+                <th mat-header-cell *matHeaderCellDef> Job </th>
+                <td mat-cell *matCellDef="let element"> {{element.job}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="salary">
+                <th mat-header-cell *matHeaderCellDef> Salary </th>
+                <td mat-cell *matCellDef="let element"> {{element.salary}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="dateOfBirth">
+                <th mat-header-cell *matHeaderCellDef> Date Of Birth </th>
+                <td mat-cell *matCellDef="let element"> {{element.dateOfBirth}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="update">
+                <th mat-header-cell *matHeaderCellDef></th>
+                <td mat-cell *matCellDef="let element">
+                    <button (click)="update(element)" matSuffix mat-icon-button>
+                        <mat-icon class="update">edit</mat-icon>
+                    </button>
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="delete">
+                <th mat-header-cell *matHeaderCellDef></th>
+                <td mat-cell *matCellDef="let element">
+                    <button (click)="deletePersonnel(element.id)" matSuffix mat-icon-button>
+                        <mat-icon class="delete">delete</mat-icon>
+                    </button>
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    </div>
+</div>

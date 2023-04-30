@@ -1,0 +1,33 @@
+.container {
+    margin: 30px 0 0 0;
+    width: 100%;
+    justify-content: center;
+    display: flex;
+}
+
+.another-one {
+    width: 50%;
+}
+
+table {
+    width: 100%;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.delete {
+    color: red;
+}
+
+.mat-column-delete {
+    width: 32px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.add {
+    margin: 0 0 20px 0;
+}

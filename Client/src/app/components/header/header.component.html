@@ -1,0 +1,15 @@
+<nav class="header">
+    <h3 class="title">Personnel Management</h3>
+
+    <form (ngSubmit)="search()" class="search">
+        <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Search</mat-label>
+
+            <input matInput [formControl]="formControl">
+
+            <button matSuffix mat-icon-button>
+                <mat-icon>search</mat-icon>
+            </button>
+        </mat-form-field>
+    </form>
+</nav>
