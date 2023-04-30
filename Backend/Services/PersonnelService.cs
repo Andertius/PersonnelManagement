@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 
 using Backend.Database;
-using Backend.Models.Entities;
+using Backend.Database.Entities;
 using Backend.Models.Requests;
 using Backend.Models.Responses;
 

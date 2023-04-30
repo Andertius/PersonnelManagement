@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Backend.Models.Entities;
+namespace Backend.Database.Entities;
 
 public class Personnel
 {
